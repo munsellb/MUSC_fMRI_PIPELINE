@@ -1,0 +1,2 @@
+SubjectFolder:/home/workstation2/sandbox/fMRI_MUSC/preprocessing_pipeline/practice_subjects2/A5797_20111006
+ROIFolder:/home/workstation2/sandbox/fMRI_MUSC/preprocessing_pipeline/Tool/ROI-3mm-mask

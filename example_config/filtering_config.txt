@@ -1,0 +1,2 @@
+SubjectFolder:/home/workstation2/sandbox/fMRI_MUSC/preprocessing_pipeline/practice_subjects2/A5797_20111006
+BrainTemplate:/home/workstation2/sandbox/fMRI_MUSC/preprocessing_pipeline/MNI152_T1_3mm_brain.nii.gz

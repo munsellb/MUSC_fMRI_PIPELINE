@@ -1,0 +1,3 @@
+SubjectFolder:/home/workstation2/sandbox/fMRI_MUSC/preprocessing_pipeline/practice_subjects2/A5797_20111006_ts
+MatlabFolder:/usr/local/toolboxes/matlab
+CorrType:pearson
