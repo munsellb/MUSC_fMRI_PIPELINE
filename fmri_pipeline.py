@@ -111,7 +111,7 @@ arguments_names = ["config", "OutputFolder", "SubjectFolder", "SubjectList", "Pr
 checkParameters(arguments, arguments_names)
 
 subject_folder = arguments["SubjectFolder"]
-
+print subject_folder + "++++++++++++"
 # checking if the slash exists
 if subject_folder[len(subject_folder)-1] != '/':
   subject_folder=subject_folder + "/"
