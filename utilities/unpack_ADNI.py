@@ -49,6 +49,7 @@ print subjects
 for s in subjects:
   os.system("mv " + subjects_folder+s + "/MPRAGE" + " " + subjects_folder+s + "/structural")
   os.system("mv " + subjects_folder+s + "/Resting_State_fMRI" + " " + subjects_folder+s + "/rsfMRI")
+  os.system("mv " + subjects_folder+s + "/Extended_Resting_State_fMRI" + " " + subjects_folder+s + "/rsfMRI")
   
   structural_folder = subjects_folder+s + "/structural/"
   functional_folder = subjects_folder+s + "/rsfMRI/"

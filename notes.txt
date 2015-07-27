@@ -1,0 +1,11 @@
+problematic subjects: 130_S_4730, 006_S_4546
+
+command to compile scrubbing .m file: mcc -m makeScrubbedSubjStructure.m ./scrubbing/*.m
+
+./run_makeScrubbedSubjStructure matlab folder subject_folder
+command to run it: ./run_makeScrubbedSubjStructure.sh /usr/local/toolboxes/matlab/ /home/workstation2/sandbox/fMRI_MUSC/preprocessing_pipeline/practice_subjects2/A5797_20111006_ts
+
+command to compile setup_and_run: mcc -m setup_and_run.m run_fMRI_ts.m ./helpers/*.m ./2015_02_05\ BCT/*.m
+
+./run_setup_and_run matlab folder subject_folder correlationtype
+command to run it: ./run_setup_and_run.sh /usr/local/toolboxes/matlab/ /home/workstation2/sandbox/fMRI_MUSC/preprocessing_pipeline/practice_subjects2/A5797_20111006_ts/ pearson

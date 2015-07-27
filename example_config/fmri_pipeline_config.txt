@@ -1,9 +1,9 @@
 OutputFolder:/home/workstation2/fmri_results
-SubjectFolder:/home/workstation2/sandbox/fMRI_MUSC/preprocessing_pipeline2/practice_subjects/
+SubjectFolder:/home/workstation2/ADNI_bu
 SubjectList:/home/workstation2/git/MUSC_fMRI_PIPELINE/example_config/subject_list.txt
 PreprocessTemplate:/home/workstation2/sandbox/fMRI_MUSC/preprocessing_pipeline/template_preprocess.fsf 
 RegressTemplate:/home/workstation2/sandbox/fMRI_MUSC/preprocessing_pipeline/template_regress.fsf 
 BrainTemplate:/home/workstation2/sandbox/fMRI_MUSC/preprocessing_pipeline/MNI152_T1_3mm_brain.nii.gz 
 ROIFolder:/home/workstation2/sandbox/fMRI_MUSC/preprocessing_pipeline/Tool/ROI-3mm-mask
 MatlabFolder:/usr/local/toolboxes/matlab 
-CorrType:partial
+CorrType:pearson

@@ -140,6 +140,6 @@ fast_output_file = convert_folder + subject_folder_name + "_seg"
 os.system("fast -t 1 -n 3 -H 0.1 -I 4 -l 20.0 " + " -o "+ fast_output_file + " " + fast_input_file)
 #print("cmd: " + "fast -t 1 -n 3 -H 0.1 -I 4 -l 20.0 " + fast_input_file + " -o "+ fast_output_file)
 #visualizing the results (optional). For quality checking purposes
-os.system("fslview "+ bet_input_file + " " + fast_output_file + "_pve_0 -l Blue-Lightblue " + fast_output_file + "_pve_1 -l Red " + fast_output_file + "_pve_2 -l Yellow &")
+#os.system("fslview "+ bet_input_file + " " + fast_output_file + "_pve_0 -l Blue-Lightblue " + fast_output_file + "_pve_1 -l Red " + fast_output_file + "_pve_2 -l Yellow &")
 #print("cmd: " + "fslview "+ bet_input_file + " " + fast_output_file + "_pve_0 -l Blue-Lightblue " + fast_output_file + "_pve_1 -l Red " + fast_output_file + "_pve_2 -l Yellow &")
 #print("Segmentation for " + subject_folder + " finished!")
