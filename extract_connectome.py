@@ -116,11 +116,11 @@ subject_folder_name = subject_folder_name[:len(subject_folder_name) - 1]
 subject_folder_name = subject_folder_name[subject_folder_name.rfind("/") + 1 : ]
 
 print "-------------  Scrubbing time series -------------"
-os.system("run_makeScrubbedSubjStructure.sh " + arguments["MatlabFolder"] + " " + arguments["SubjectFolder"])
+os.system("./run_makeScrubbedSubjStructure.sh " + arguments["MatlabFolder"] + " " + arguments["SubjectFolder"])
 print "-------------  Scrubbing finished -------------"
 
-print "run_makeScrubbedSubjStructure.sh " + arguments["MatlabFolder"] + " " + arguments["SubjectFolder"]
+print "./run_makeScrubbedSubjStructure.sh " + arguments["MatlabFolder"] + " " + arguments["SubjectFolder"]
 
 print "-------------  Extracting connectome and its measures -------------"
-os.system("run_setup_and_run.sh " + arguments["MatlabFolder"] + " " + arguments["SubjectFolder"] + " " + arguments["CorrType"] )
+os.system("./run_setup_and_run.sh " + arguments["MatlabFolder"] + " " + arguments["SubjectFolder"] + " " + arguments["CorrType"] )
 print "-------------  Extracting finished -------------"
