@@ -63,7 +63,34 @@ def getInputs(event):
   arguments["MatlabFolder"] = entries[7].get()
   arguments["CorrType"] = v.get()
   print arguments
+  createConfigFile( ".fMRI_GUI_CONFIG.txt", arguments )
   super_master.destroy()
+
+  
+def createConfigFile(filename, parameters):
+  f = open(filename, "wt")
+  
+  for k in parameters.keys():
+    f.write(k+":"+parameters[k]+"\n")
+  f.close()
+  
+def loadConfigFile():
+  if ( os.path.exists( ".fMRI_GUI_CONFIG.txt" ) ):
+    f = open(".fMRI_GUI_CONFIG.txt", "r")
+    lines = f.readlines()
+    for i in range(0, len(lines)):
+      tokens = lines[i].rstrip().split(":")
+      arguments[tokens[0]] = tokens[1]
+	
+    entries[0].insert(0, arguments["OutputFolder"])
+    entries[1].insert(0, arguments["SubjectFolder"] )
+    entries[2].insert(0, arguments["SubjectList"] )
+    entries[3].insert(0, arguments["PreprocessTemplate"] )
+    entries[4].insert(0, arguments["RegressTemplate"] )
+    entries[5].insert(0, arguments["BrainTemplate"] )
+    entries[6].insert(0, arguments["ROIFolder"] )
+    entries[7].insert(0, arguments["MatlabFolder"] )
+    v.set( arguments["CorrType"] )
   
 super_master = Tk()
 master = Frame(super_master)
@@ -118,7 +145,6 @@ v.set("pearson")
 
 r1 = Radiobutton(master2, text="Pearson", variable=v, value="pearson")
 
-
 r2 = Radiobutton(master2, text="Partial", variable=v, value="partial")
 
 r3 = Radiobutton(master2, text="Kendall", variable=v, value="kendall")
@@ -133,17 +159,10 @@ r4.grid(row=0, column=4)
 ok_button = Button(master3, text="Run", fg="black")
 ok_button.bind('<Button-1>',getInputs)
 ok_button.pack()
+
+loadConfigFile()
+
 super_master.mainloop()
-
-# This function creates a configuration file by giving the name of the file, and its parameters
-# paramaters -> a dictionary containing all the keys (parameters names) and values (locations) 
-def createConfigFile(filename, parameters):
-  f = open(filename, "wt")
-  
-  for k in parameters.keys():
-    f.write(k+":"+parameters[k]+"\n")
-  f.close()
-
 
 # Displaying the help option to the user
 if len(sys.argv) > 1 and sys.argv[1] == "--help":
@@ -160,14 +179,21 @@ if len(sys.argv) > 1 and sys.argv[1] == "--help":
 	print ""
 	exit(0)
 
-subject_folder = arguments["SubjectFolder"]
+try:
+
+  subject_folder = arguments["SubjectFolder"]
+
+except:
+  
+  exit(0)
+  
+  
 print subject_folder + "++++++++++++"
 # checking if the slash exists
 if subject_folder[len(subject_folder)-1] != '/':
   subject_folder=subject_folder + "/"
-
+  
 f = open(arguments["SubjectList"])
-
 
 # This loop runs according to the number of Subjects the user wants to process
 for subject in f.readlines():

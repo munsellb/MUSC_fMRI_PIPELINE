@@ -47,9 +47,19 @@ subjects = subjects.split("\n")
 print subjects
 
 for s in subjects:
+
+  # ---------------------------------------------------------------------------------------------
+  # MPRAGE (copy to stuctural folder), Resting_State_fMI (copy to rsfMRI folder), and Extended_Resting_State_fMRI (copy to rsfMRI folder)
+  # MPRAGE, Resting_State_fMI, and Extended_Resting_State_fMRI naming convention are specific to ADNI data
+  # Must change naming convention if someother format
+  # 
+  
   os.system("mv " + subjects_folder+s + "/MPRAGE" + " " + subjects_folder+s + "/structural")
   os.system("mv " + subjects_folder+s + "/Resting_State_fMRI" + " " + subjects_folder+s + "/rsfMRI")
   os.system("mv " + subjects_folder+s + "/Extended_Resting_State_fMRI" + " " + subjects_folder+s + "/rsfMRI")
+  
+  # ---------------------------------------------------------------------------------------------
+  # This script must have a structural folder and refMRI folder
   
   structural_folder = subjects_folder+s + "/structural/"
   functional_folder = subjects_folder+s + "/rsfMRI/"
